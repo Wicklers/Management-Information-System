@@ -1,0 +1,116 @@
+html,
+body {
+  height: 100%;
+  background: url('../images/background.jpg') no-repeat;
+  background-size: cover;
+}
+#logo{
+	background: url('../images/logo.png') no-repeat;
+	height:75px;
+	width:83px;
+	background-size: cover;
+	position:relative;
+	margin:0 auto;
+}
+.mis.login-form {
+  height: auto;
+  font-family: 'Balthazar', serif;
+}
+.mis.login-form h1 {
+  font-family: 'Balthazar', serif;
+}
+.mis.login-form a {
+  color: #22A3CC;
+}
+.mis.login-form .login-popup-wrap {
+  position: relative;
+  top: 80px;
+  left: 60px;
+  color: #aeaeae;
+  min-width: 300px;
+}
+.mis.login-form .login-popup-wrap > :first-child {
+  margin-bottom: 6px;
+}
+.mis.login-form .login-popup {
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 0px;
+  padding: 20px 40px;
+}
+.mis.login-form .footer {
+  -webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 0px;
+  padding: 20px 40px;
+  position:relative;
+  margin-top:10px;
+}
+.mis.login-form .title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333333;
+}
+.mis.login-form .text {
+  background: #f8f8f8;
+  border: none;
+  font-size: 16px;
+}
+.mis.login-form .submit {
+  background: #22A3CC;
+  color: #fff;
+  font-size: 24px;
+  width: 100%;
+  padding: 0;
+}
+.mis.login-form .cancel {
+  font-size: 24px;
+  width: 100%;
+  padding: 0;
+}
+
+.mis.login-form .divider {
+  height: 1px;
+  margin-top: 30px;
+  border-bottom: 1px solid #e2e2e2;
+}
+.mis.login-form .divider-label {
+  display: inline-block;
+  padding: 6px;
+  background: #fff;
+  position: relative;
+  top: -16px;
+}
+.mis.login-form .footer-icons {
+  margin: 15px 0;
+}
+.mis.login-form .footer-icons li > a {
+  display: block;
+  border-radius: 55em;
+  background: #aeaeae;
+  width: 32px;
+  height: 32px;
+  padding: 4px 0;
+  font-size: 20px;
+  color: #fff;
+}
+@media (max-width: 767px) {
+  .mis.login-form .login-popup-wrap {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    padding: 50px 50px;
+  }
+  .login-popup {
+    padding: 20px 5px;
+  }
+}
+@media (max-width: 460px) {
+  .mis.login-form .login-popup-wrap {
+    padding: 50px 5px;
+  }
+}
