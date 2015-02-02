@@ -1,0 +1,2 @@
+ErrorDocument 404 /includes/errors/404.php
+RewriteEngine On

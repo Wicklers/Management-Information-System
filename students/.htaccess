@@ -1,0 +1,16 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+ErrorDocument 404 /includes/errors/404.php
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^~(.*)/$ http://sis.nits.ac.in/~$1 [L,R,NC]
+
+RewriteRule ^(.*)\.html$ $1.php [NC]
+RewriteRule ^(.*)\.htm$ $1.php [NC]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^~(.*)$ profile.php?user=$1 [L,NC]
