@@ -44,6 +44,16 @@ class Course {
             if ($this -> getInfobyId($id)) {
                 return 2;
             } else {
+		$id = strtoupper($id);
+
+
+		$id = preg_replace("/[^a-zA-Z0-9_\s-]/", "", $id);
+		//Make alphanumeric (removes all other characters)
+
+		//Clean up multiple dashes or whitespaces
+		$id = preg_replace("/[\s-]+/", " ", $id);
+		//Convert whitespaces and underscore to dash
+		$id = preg_replace("/[\s_]/", "", $id);
                 $this -> _course_id = $this -> _db -> real_escape_string(escape($id));
                 $this -> _course_name = $this -> _db -> real_escape_string(escape($name));
                 $this -> _course_department = $this -> _db -> real_escape_string(escape($dep));
