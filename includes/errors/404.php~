@@ -1,0 +1,8 @@
+<center><div class="welcome">
+	<img src="../../images/logo.png" height="102px">
+	<h1>404 Error :(</h1>
+	<p>We tried hard to find the requested page.</p>
+	<p>But it seems we don't have it, or if you feel you are seeing this page as an error, do report admins. :)</p>
+	<p><a href="../../home.php">Click Here</a> to go back to your dashboard.</p>
+</div>
+</center>
