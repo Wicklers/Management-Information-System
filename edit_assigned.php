@@ -3,12 +3,13 @@ require_once 'core/init.php';
 if(!loggedIn()){
     die();
 }
-if(!Input::exists('get') || Input::get('cid')=='' || Input::get('did')=='' || Input::get('cs')==''){
+if(!Input::exists('get') || Input::get('id')=='' || Input::get('cid')=='' || Input::get('did')=='' || Input::get('cs')==''){
     die();
 }
 else{
     $c = new Course();
-    $course = $c->getAppointedInfo(Input::get('cid'), Input::get('did'), Input::get('cs'));
+    $course = $c->getAppointedInfo(Input::get('id'), Input::get('cid'), Input::get('did'), Input::get('cs'));
+
 ?>
 
 
@@ -36,6 +37,7 @@ else{
 				<tr>    
 			        <th>Department</th>
 			        <td>
+						<input type="hidden" name="id" value="<?php echo Input::get('id'); ?>">
 						<input type="hidden" name="department" value="<?php echo Input::get('did'); ?>">
 						<?php
 						$dd = new Department();

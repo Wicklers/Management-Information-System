@@ -20,7 +20,7 @@ if(Input::exists()){
     if($validate->passed()){
         $c = new Course();
         
-        $add = $c->edit_appointed_course(Input::get('course_code'), Input::get('department'), Input::get('semester'), Input::get('teacher'));
+        $add = $c->edit_appointed_course(Input::get('id'),Input::get('course_code'), Input::get('department'), Input::get('semester'), Input::get('teacher'));
         
         if($add==2){
             echo '<div class="alert alert-warning alert-dismissible" role="alert">';

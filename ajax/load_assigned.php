@@ -60,8 +60,8 @@ if(privilege()==NULL){
 														unset($t);
 													?>
 												</td>
-												<td><button class="btn btn-default" onClick="edit_assigned_feild(<?php echo $i . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button>
-													<button class="btn btn-danger"  onClick="delete_assigned(<?php echo $i . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >Remove</button>
+												<td><button class="btn btn-default" onClick="edit_assigned_feild(<?php echo $course->id . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button>
+													<button class="btn btn-danger"  onClick="delete_assigned(<?php echo $course->id . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >Remove</button>
 												</td>
                                             </tr>
                                             <?php

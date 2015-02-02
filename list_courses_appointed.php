@@ -53,7 +53,7 @@ if(!loggedIn()){
 											            while(!empty($courses) && $course = $courses->fetch_object()){
 											            	$i++;
 												?>
-                                            <tr id="<?php echo "assigned_row_id".$i; ?>">
+                                            <tr id="<?php echo 'assigned_row_id'.$i; ?>">
                                                 <td><?php echo $course->course_code; ?></td>
                                                 <td>
 													<?php
@@ -79,8 +79,8 @@ if(!loggedIn()){
 														unset($t);
 													?>
 												</td>
-												<td><button class="btn btn-default" onClick="edit_assigned_feild(<?php echo $i . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button>
-													<button class="btn btn-danger"  onClick="delete_assigned(<?php echo $i . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >Remove</button>
+												<td><button class="btn btn-default" onClick="edit_assigned_feild(<?php echo $course->id . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >&nbsp;&nbsp;&nbsp;Edit&nbsp;&nbsp;&nbsp;</button>
+													<button class="btn btn-danger"  onClick="delete_assigned(<?php echo $course->id . ',\'' . $course->course_code. '\',' . $course->course_dep. ',' . $course->course_sem ; ?>);" >Remove</button>
 												</td>
                                             </tr>
                                             <?php
@@ -130,7 +130,7 @@ if(!loggedIn()){
                 $("#example1").dataTable();
             });
             
-            function edit_assigned_feild($id,$course_code,$course_dep,$course_sem){
+            function edit_assigned_feild($id,$course_code,$course_dep,$course_sem,$course_teacher){
 				if(confirm('Are you sure, you want to edit this entry?')){
 					$('#editModal').modal();
 					$('#editArea').load('edit_assigned.php?id='+$id+'&cid='+$course_code+'&did='+$course_dep+'&cs='+$course_sem);
@@ -142,7 +142,7 @@ if(!loggedIn()){
 				$('#content_area').load('ajax/load_assigned.php');
 			}
 	
-			function delete_assigned($id,$course_code,$course_dep,$course_sem){
+			function delete_assigned($id,$course_code,$course_dep,$course_sem,$course_teacher){
 				if(confirm('Are you sure, you want to remove this entry?')){
 					$('#update').load('ajax/remove_assigned.php?id='+$id+'&cid='+$course_code+'&did='+$course_dep+'&cs='+$course_sem);
 			

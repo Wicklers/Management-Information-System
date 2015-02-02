@@ -8,13 +8,15 @@ if(!Input::exists('get')){
 }
 else{
     $c = new Course();
-    $del = $c->remove_appointed_course(Input::get('cid'), Input::get('did'), Input::get('cs'));
+    $del = $c->remove_appointed_course(Input::get('id'), Input::get('cid'), Input::get('did'), Input::get('cs'));
     
     if($del==='Entry has been Deleted'){
         //$log = new Log();
         //$log->actionLog('Deleted Department');
         ?>
+		<script>
             save_edit_a();
+	</script>
         <?php
     }
 

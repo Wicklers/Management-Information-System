@@ -304,16 +304,17 @@ class Course {
         
     }
     
-    public function getAppointedInfo($course_code,$course_dep,$course_sem){
+    public function getAppointedInfo($id, $course_code,$course_dep,$course_sem){
         if(!loggedIn()){
             return 0;
         }
         $this->_connect();
+        $id = $this->_db->real_escape_string($id);
         $course_code = $this->_db->real_escape_string($course_code);
         $course_dep = $this->_db->real_escape_string($course_dep);
         $course_sem = $this->_db->real_escape_string($course_sem);
         
-        $query = "SELECT * FROM courses_appointed WHERE course_code='".$course_code."' AND course_dep='".$course_dep."' AND course_sem='".$course_sem."' AND timestamp>='".Session::get('semester_timestamp')."'";
+        $query = "SELECT * FROM courses_appointed WHERE id='".$id."' AND course_code='".$course_code."' AND course_dep='".$course_dep."' AND course_sem='".$course_sem."' AND timestamp>='".Session::get('semester_timestamp')."'";
         $result = $this->_db->query($query);
         if($result->num_rows){
             return $result->fetch_object();
@@ -323,17 +324,18 @@ class Course {
         }
     }
     
-    public function edit_appointed_course($course_code,$department,$semester,$teacher){
+    public function edit_appointed_course($id,$course_code,$department,$semester,$teacher){
         if(!loggedIn()){
             return 0;
         }
         $this->_connect();
+	$id = $this->_db->real_escape_string($id);
         $course_code = $this->_db->real_escape_string($course_code);
         $department = $this->_db->real_escape_string($department);
         $semester = $this->_db->real_escape_string($semester);
         $teacher = $this->_db->real_escape_string($teacher);
         
-        $query = "UPDATE courses_appointed SET teacher_id='".$teacher."' WHERE course_code='".$course_code."' AND course_dep='".$department."' AND course_sem='".$semester."' AND timestamp>='".Session::get('semester_timestamp')."'";
+        $query = "UPDATE courses_appointed SET teacher_id='".$teacher."' WHERE id='".$id."' AND course_code='".$course_code."' AND course_dep='".$department."' AND course_sem='".$semester."' AND timestamp>='".Session::get('semester_timestamp')."'";
         
         $result = $this->_db->query($query);
         
@@ -346,18 +348,18 @@ class Course {
         
     }
     
-    public function remove_appointed_course($course_code,$department,$semester){
+    public function remove_appointed_course($id,$course_code,$department,$semester){
         if(!loggedIn()){
             return 'Temporary Problem.';
         }
         
         $this->_connect();
-        
+	$id = $this->_db->real_escape_string($id);
         $course_code = $this->_db->real_escape_string($course_code);
         $department = $this->_db->real_escape_string($department);
         $semester = $this->_db->real_escape_string($semester);
         
-        $query = "DELETE FROM courses_appointed WHERE course_code='".$course_code."' AND course_dep='".$department."' AND course_sem='".$semester."'AND timestamp>=' ".Session::get('semester_timestamp')."'";
+        $query = "DELETE FROM courses_appointed WHERE id='".$id."' AND course_code='".$course_code."' AND course_dep='".$department."' AND course_sem='".$semester."'AND timestamp>=' ".Session::get('semester_timestamp')."'";
         
         $result = $this->_db->query($query);
             if($this->_db->affected_rows){
