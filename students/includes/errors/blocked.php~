@@ -1,0 +1,7 @@
+<center><div class="welcome">
+	<img src="../../images/logo.png" height="102px">
+	<h1>Access Blocked</h1>
+	<p>Sorry, you have been blocked because of certain number of failed login attempts.</p>
+	<p>Please ask any higher authority to unblock.</p>
+</div>
+</center>
