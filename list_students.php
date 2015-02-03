@@ -49,7 +49,7 @@ if(!loggedIn()){
                                                 <th>Total Credit Point</th>
                                                 <th>Home<br/>Address</th>
                                                 <th>Hostel<br/>Address</th>
-                                                <th>Payment</th>
+                                                <th>Mobile<br/>Verified</th>
                                                 <th>Approved</th>
                                                 <th>Blocked</th>
                                                 <th>&nbsp;</th>
@@ -90,7 +90,7 @@ if(!loggedIn()){
 												<td><?php echo $student->total_max_score; ?></td>
 												<td><?php echo $student->home_address; ?></td>
 												<td><?php echo $student->hostel_address; ?></td>
-												<td><?php echo (($student->payment_verified)?'Completed':'Not Completed'); ?></td>
+												<td><?php echo (($student->mobile_verified)?'Yes':'No'); ?></td>
                                                 <td><?php echo (($student->approved)?'Approved':'Not Approved'); ?></td>
                                                 <td><?php echo (($student->blocked)?'Blocked':'-'); ?></td>
 												<td><button class="btn btn-danger" onClick="edit_student_feild(<?php echo $i . ',\'' . $student->scholar_no . '\''; ?>);" >&nbsp;Edit&nbsp;</button>
@@ -115,7 +115,7 @@ if(!loggedIn()){
                                                 <th>Total Credit Point</th>
                                                 <th>Home<br/>Address</th>
                                                 <th>Hostel<br/>Address</th>
-                                                <th>Payment</th>
+                                                <th>Mobile<br/>Verified</th>
                                                 <th>Approved</th>
                                                 <th>Blocked</th>
                                                 <th>&nbsp;</th>
