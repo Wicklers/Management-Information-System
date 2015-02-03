@@ -71,7 +71,7 @@ if (Input::exists()) {
                       $v = $student -> validateLogin();
                       if ($v == 1) {
                         $otp = new OTP();
-                        if (1) {//$otp->send($student->getMobile()) //Send OTP
+                        if ($otp->send($student->getMobile())) {//$otp->send($student->getMobile()) //Send OTP
                           Session::put('OTP Sending', 'OTP Sent, Verify Here');
                         }
                       } else if ($v == 0 || $v == 4) {
