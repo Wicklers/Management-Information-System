@@ -50,7 +50,7 @@ function showResponsemsg(responseText, statusText, xhr, $form)  {
 	$('#loading').hide();
 	$('#update').fadeIn();
 	$('.u_close').fadeIn();
-	if(responseText==="Registration Successful."){
+	if(responseText=='Registration Successful.'){
 		window.location="http://sis.nits.ac.in/registration.php?step=2";
 	}
    return true;
