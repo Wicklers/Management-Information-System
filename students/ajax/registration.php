@@ -73,7 +73,7 @@ if(Input::exists('post')){
 		if($add==1){
 			$log = new Log();
 			$log->actionLog('Student Registered');
-			echo 'Registration Successful.';
+			echo 1;
 			$otp = new OTP();
 			$otp->send($mobile);
 			//Redirect::to('registration.php?step=2');
