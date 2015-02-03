@@ -138,7 +138,13 @@ E-mail: harsh.ladha@gmail.com , anujsingh432@gmail.com , ripon.patgiri@gmail.com
 						<h4>Mobile : +91 <?php 
 							echo $s->getMobile();
 						?></h4>
-						<h4><u><a href="//sis.nits.ac.in/students_cv/<?php echo $s->getCVLink(); ?>" target="_blank">Curriculum Vitae</a></u></h4>
+						<?php
+						if($s->getCVLink()){
+						?>
+							<h4><u><a href="//sis.nits.ac.in/students_cv/<?php echo $s->getCVLink(); ?>" target="_blank">Curriculum Vitae</a></u></h4>
+						<?php
+						}
+						?>
 					</div>
 					<div class="box-title pull-right">
 						
@@ -155,8 +161,8 @@ E-mail: harsh.ladha@gmail.com , anujsingh432@gmail.com , ripon.patgiri@gmail.com
 		</div>
 		<div class="col-md-2">
 			<div class="footer">
-           		<b>&copy; 2014</b> <a target="_blank" href="http://www.nits.ac.in">National Institute of Technology, Silchar</a><br/>Proudly developed by <a href="#"><i>Computer Science & Engineering</i></a>
-				<br/><a target="_blank" href="http://www.harshladha.com"> <b>Harsh Vardhan Ladha</a> &amp; <a target="_blank" href="https://in.linkedin.com/in/yogeshchauhan1">Yogesh Chauhan</b></a><br/>Under the guidance of <a href="#"><i><b>Ripon Patgiri</b></i></a>
+           		<b>&copy; 2014</b> <a target="_blank" href="http://www.nits.ac.in">National Institute of Technology, Silchar</a><br/>Proudly developed by<br /><a href="#"><i>Computer Science & Engineering</i></a>
+				<br/><a target="_blank" href="http://www.harshladha.com"><b>Harsh Ladha</a> &amp; <a target="_blank" href="https://in.linkedin.com/in/yogeshchauhan1">Yogesh Chauhan</b></a><br/>Under the guidance of <br /><a href="#"><i><b>Ripon Patgiri</b></i></a>
             </div>
 		</div>
 		<div class="col-md-1">
