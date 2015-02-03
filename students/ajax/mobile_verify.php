@@ -13,7 +13,7 @@ if(Input::exists('post')){
 		
 		$otp = new OTP();
 		
-		if(1){ //$otp->verifyOTP(Input::get('otpcode'));
+		if($otp->verifyOTP(Input::get('otpcode'))){ 
 			$stud = new Student();
 			$ver = $stud->verifyMobile(Session::get('sn'));
 			if($ver){
