@@ -51,7 +51,7 @@ function showResponsemsg(responseText, statusText, xhr, $form)  {
 	$('#update').fadeIn();
 	$('.u_close').fadeIn();
 	if(responseText==="Registration Successful."){
-		window.location.href="registration.php?step=2";
+		window.location="http://sis.nits.ac.in/registration.php?step=2";
 	}
    return true;
    
@@ -87,7 +87,7 @@ function showRes(responseText, statusText, xhr, $form)  {
 	$('#update').fadeIn();
 	$('.u_close').fadeIn();
 	if(responseText==="Verified."){
-		window.location.href="registration.php?step=3";
+		window.location="http://sis.nits.ac.in/registration.php?step=3";
 	}
    return true;
    

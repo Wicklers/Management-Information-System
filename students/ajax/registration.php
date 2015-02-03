@@ -75,7 +75,8 @@ if(Input::exists('post')){
 			$log->actionLog('Student Registered');
 			echo 'Registration Successful.';
 			$otp = new OTP();
-			//$otp->send($mobile);
+			$otp->send($mobile);
+			//Redirect::to('registration.php?step=2');
 		}
 		else{
 			echo 'Something went wrong... Please try again after clicking cancel.';
