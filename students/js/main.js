@@ -25,7 +25,7 @@ $(document).ready(function(){
 
 //step 1 registration
 	var options = { 
-		//target:        '#update',   // target element(s) to be updated with server response 
+		target:        '#update',   // target element(s) to be updated with server response 
 		beforeSubmit:  showRequest,  // pre-submit callback 
         success:       showResponsemsg,  // post-submit callback 
 		url:'ajax/registration.php',
@@ -47,9 +47,9 @@ function showRequest(formData, jqForm, options) {
 // post-submit callback 
 function showResponsemsg(responseText, statusText, xhr, $form)  { 
     
-	//$('#loading').hide();
-	//$('#update').fadeIn();
-	//$('.u_close').fadeIn();
+	$('#loading').hide();
+	$('#update').fadeIn();
+	$('.u_close').fadeIn();
 	
 	if(responseText==1){
 		window.location="http://sis.nits.ac.in/registration.php?step=2";
@@ -87,7 +87,7 @@ function showRes(responseText, statusText, xhr, $form)  {
 	$('#loading').hide();
 	$('#update').fadeIn();
 	$('.u_close').fadeIn();
-	if(responseText==="Verified."){
+	if(responseText==1){
 		window.location="http://sis.nits.ac.in/registration.php?step=3";
 	}
    return true;

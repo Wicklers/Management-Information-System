@@ -17,7 +17,7 @@ if(Input::exists('post')){
 			$stud = new Student();
 			$ver = $stud->verifyMobile(Session::get('sn'));
 			if($ver){
-				echo "Verified.";
+				echo 1;
 			}
 			else{
 				echo "There is temporary problem. Please try again after some time.";
