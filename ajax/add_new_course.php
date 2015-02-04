@@ -12,9 +12,6 @@ if(Input::exists('post') && privilege()!=NULL){
 		),
 		'department' => array(
 			'required' => true
-		),
-		'credit' => array(
-			'required' => true
 		)
 	));
 	

@@ -14,9 +14,6 @@ if(Input::exists('post')){
 		),
 		'department' => array(
 			'required' => true
-		),
-		'credit' => array(
-			'required' => true
 		)
 	));
 	
