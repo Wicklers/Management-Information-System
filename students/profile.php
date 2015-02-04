@@ -162,7 +162,7 @@ E-mail: harsh.ladha@gmail.com , anujsingh432@gmail.com , ripon.patgiri@gmail.com
 		</div>
 		<div class="col-md-2">
 			<div class="footer">
-           		<b>&copy; 2014</b> <a target="_blank" href="http://www.nits.ac.in">National Institute of Technology, Silchar</a><br/>Proudly developed by<br /><a href="#"><i>Computer Science & Engineering</i></a>
+           		<b>&copy; 2015</b> <a target="_blank" href="http://www.nits.ac.in">National Institute of Technology, Silchar</a><br/>Proudly developed by<br /><a href="#"><i>Computer Science & Engineering</i></a>
 				<br/><a target="_blank" href="http://www.harshladha.com"><b>Harsh Ladha</a> &amp; <a target="_blank" href="https://in.linkedin.com/in/yogeshchauhan1">Yogesh Chauhan</b></a><br/>Under the guidance of <br /><a href="#"><i><b>Ripon Patgiri</b></i></a>
             </div>
 		</div>
