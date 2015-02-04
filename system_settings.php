@@ -155,7 +155,10 @@ else if(loggedIn() && (privilege()==='teacher' || privilege()==='dppc' || privil
 
 		        $('#new_sem').click(function() {
 		        	if(confirm('Are you sure, you want to start new semester? It is an irreversible process. Starting new semester will reset course allotment and students registration details.')){
-		        		$("#semester_details").load("ajax/new_session.php");
+		        		var check = prompt("Please type the following text: \nI am changing semester");
+						if(check=="I am changing semester"){
+							$("#semester_details").load("ajax/new_session.php");
+						}
 					}
 		            
 		        });
