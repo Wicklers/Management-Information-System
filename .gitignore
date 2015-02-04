@@ -1,0 +1,13 @@
+*.php~
+.settings
+.project
+*.css~
+*.js~
+*.html~
+*.htm~
+LDAP/reset.php
+core/config.php
+students/students_cv/*
+images/profile/*
+students/images/profile/*
+.buildpath
