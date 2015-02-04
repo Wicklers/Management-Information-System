@@ -5,14 +5,22 @@ if(Input::exists('post')){
 	$biography = Input::get('editor1');
 	$s = new Student();
 	if(Input::fileexists('cv')){
-		$main = Input::filename('cv');
-		$name = strtolower(preg_replace('/\s+/', '', Session::get('displayname')));
-		$id = Session::get('student_id');
-		$final = $name.$id.$main;
-		$filename = '/opt/lampp/htdocs/www/MIS/students/students_cv/'.$final;
-		$file = Input::file('cv',$filename);
-	}
-	else
+		if(Input::filetype('cv')=='application/pdf'){
+			$main = Input::filename('cv');
+			$name = strtolower(preg_replace('/\s+/', '', Session::get('displayname')));
+			$id = Session::get('student_id');
+			$final = $name.$id.$main;
+			$path = '/opt/lampp/htdocs/www/MIS/students/students_cv/';
+			$file = Input::file('cv',$path,$final);
+		
+		}else{
+			echo '<div class="alert alert-warning alert-dismissible" role="alert">';
+			echo '<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>';
+			echo 'Please upload your CV in PDF format ONLY!';
+			echo '</div>';
+			$final = '';
+		}
+	}else
 		$final = '';
 	
 	$a = $s->updateBiography(Session::get('sn'), $biography, $final);

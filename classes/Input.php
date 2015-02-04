@@ -30,15 +30,16 @@ class Input{
 					}
 				return '';
 			}
-		public static function image($item, $filename){
+		public static function image($item, $path, $filename){
 			$image_tempname1 = $_FILES[$item]['name'];
-			$ImageName = $image_tempname1;
+			$ImageName = $path.$image_tempname1;
+			$newfilename = $path.$filename;
 			if(move_uploaded_file($_FILES[$item]['tmp_name'], $ImageName))
 			{
 				list($width, $height, $type, $attr) = getimagesize($ImageName);
 				if($type==2)
 				{
-					rename($ImageName, $filename);
+					rename($ImageName, $newfilename);
 				}
 				else
 				{
@@ -52,7 +53,7 @@ class Input{
 					}
 					$image_jpg = imagecreatetruecolor($width, $height);
 					imagecopyresampled($image_jpg, $image_old,0,0,0,0,$width,$height,$width,$height);
-					imagejpeg($image_jpg, $filename);
+					imagejpeg($image_jpg, $newfilename);
 					imagedestroy($image_old);
 					imagedestroy($image_jpg);
 				}
@@ -63,12 +64,13 @@ class Input{
 				return 0;
 			}
 		}
-		public static function file($item, $filename){
+		public static function file($item, $path, $filename){
 			$tempname1 = $_FILES[$item]['name'];
-			$Name = $tempname1;
+			$Name = $path.$tempname1;
+			$newfilename = $path . $filename;
 			if(move_uploaded_file($_FILES[$item]['tmp_name'], $Name))
 			{
-				rename($Name,$filename);
+				rename($Name,$newfilename);
 				return 1;
 			}
 			else
@@ -83,6 +85,9 @@ class Input{
 		}
 		public static function filename($item){
 			return $_FILES[$item]['name'];
+		}
+		public static function filetype($item){
+			return $_FILES[$item]['type'];
 		}
 	}
 ?>

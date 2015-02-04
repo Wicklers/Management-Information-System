@@ -11,8 +11,9 @@ if(Input::exists('post') && Input::fileexists('photo')){
 	if($validate->passed()){
 		$name = strtolower(preg_replace('/\s+/', '', Session::get('displayname')));
 		$id = Session::get('student_id');
-		$filename = '/opt/lampp/htdocs/www/MIS/students/images/profile/'.$name.$id.'.jpg';
-		$photo = Input::image('photo',$filename);
+		$path = '/opt/lampp/htdocs/www/MIS/students/images/profile/';
+		$filename = $name.$id.'.jpg';
+		$photo = Input::image('photo',$path,$filename);
 		
 		if(!$photo){
 			echo '<div class="alert alert-danger alert-dismissible" role="alert">';
