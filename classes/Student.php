@@ -357,11 +357,13 @@ class Student {
     		return 0;
     }
     
-    public function editInfo($scholar_no, $mobile, $parents_mobile, $total_score, $max_score, $home_address, $hostel_address, $approved, $blocked){
+    public function editInfo($scholar_no, $mobile, $parents_mobile, $courses, $courses_load, $total_score, $max_score, $home_address, $hostel_address, $approved, $blocked){
     	if(!loggedIn())
     		return 0;
     	$this->_connect();
     	$scholar_no = $this -> _db -> real_escape_string(escape($scholar_no));
+    	$courses = $this -> _db -> real_escape_string(escape($courses));
+    	$courses_load = $this -> _db -> real_escape_string(escape($courses_load));
     	$mobile = $this -> _db -> real_escape_string(escape($mobile));
     	$parents_mobile = $this -> _db -> real_escape_string(escape($parents_mobile));
     	$total_score = $this -> _db -> real_escape_string(escape($total_score));
@@ -374,6 +376,8 @@ class Student {
     	$query = "UPDATE students_info SET
     										mobile = '".$mobile."',
     										parents_mobile = '".$parents_mobile."',
+										courses = '".$courses."',
+										courses_load = '".$courses_load."',
     										total_score = '".$total_score."',
     										total_max_score = '".$max_score."',
     										cpi = '".$cpi."',

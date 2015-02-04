@@ -52,19 +52,15 @@ else{
                             </tr>
 							<tr>
                                 <th>Regular <br/> Courses</th>
-                                <td><?php
-										$courses=str_replace(',', '<br/>', $t->getCourses());
-										echo $courses; 
-									?>
-								</td>
+				<td>
+				<textarea name="courses" class="form-control" placeholder="Regular Courses"><?php echo $t->getCourses(); ?></textarea>
+				</td>
 							</tr>
 							<tr>
                                 <th>Load <br/> Courses</th>
-                                <td><?php
-										$courses=str_replace(',', '<br/>', $t->getCoursesLoad());
-										echo $courses; 
-									?>
-								</td>
+                                <td>
+				<textarea name="courses_load" class="form-control" placeholder="Load Courses"><?php echo $t->getCoursesLoad(); ?></textarea>
+				</td>
 							</tr>
 							<tr>
                                 <th>Total Credit Scored</th>

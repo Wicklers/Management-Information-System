@@ -19,6 +19,12 @@ if(Input::exists('post')){
 			'min'	=> 10,
 			'max'	=> 10
 		),
+		'courses' => array(
+			'required' => true
+		),
+		'courses_load' => array(
+			'required' => true
+		),
 		'total_score' => array(
 			'required' => true
 		),
@@ -35,7 +41,7 @@ if(Input::exists('post')){
 	
 	if($validate->passed()){
 		$stud = new Student();
-		$edit = $stud->editInfo(Input::get('scholar_no'), Input::get('mobile'), Input::get('parents_mobile'), Input::get('total_score'), Input::get('max_score'), Input::get('home_address'), Input::get('hostel_address'), Input::get('approved'), Input::get('blocked'));
+		$edit = $stud->editInfo(Input::get('scholar_no'), Input::get('mobile'), Input::get('parents_mobile'), Input::get('courses'), Input::get('courses_load'), Input::get('total_score'), Input::get('max_score'), Input::get('home_address'), Input::get('hostel_address'), Input::get('approved'), Input::get('blocked'));
 		if($edit==1){
 			/*
 			$log = new Log();
