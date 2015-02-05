@@ -101,11 +101,13 @@ class LDAP {
                  $log = new Log();
                  $log -> loginLog('wrong credentials');
 		 ldap_unbind($conn);
+		 Session::destroy();
                  return 0;
                 
             }
         } else {
             ldap_unbind($conn);
+	    Session::destroy();
             return 0;
         }
 

@@ -22,9 +22,6 @@ if(Input::exists('post')){
 		'courses' => array(
 			'required' => true
 		),
-		'courses_load' => array(
-			'required' => true
-		),
 		'total_score' => array(
 			'required' => true
 		),
