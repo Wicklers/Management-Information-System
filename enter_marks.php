@@ -59,7 +59,7 @@ if(!loggedIn() || privilege()==NULL){
 																						}
 																						if(!$matched){
 																				?>
-																							<option  value="<?php echo $course -> course_code . ',' . $course -> course_dep; ?>">	<?php echo $course -> course_code; ?> in <?php $d = new Department();
+																							<option  value="<?php echo $course -> course_code . ',' . $course -> course_dep; ?>">	<?php echo $course -> course_code.'-'; $ccn = new Course(); $ccn->getInfobyId($course->course_code); echo $ccn->getCourseName(); unset($ccn); ?> in <?php $d = new Department();
 																					$d -> getInfo($course -> course_dep);
 																					echo $d -> getDepName();
 													 ?></option>

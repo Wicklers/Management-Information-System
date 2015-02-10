@@ -140,7 +140,31 @@ if(Input::exists('get') || !Input::exists() || privilege()==NULL){
             	<tr>
                 	<th>#</th>
                     <th>Scholar No.</th>
-                    <th><?php echo strtoupper(Input::get('examtype')); ?></th>
+		    <th><?php switch(Input::get('examtype')){
+                    	case 'ct1':
+                    		echo "Class Test-1 <i>(Max Marks : 10)</i>";
+                    		$max = "10";
+                    		break;
+                    	case 'ct2':
+                    		echo "Class Test-2 <i>(Max Marks : 10)</i>";
+                    		$max = "10";
+                    		break;
+                    	case 'ct3':
+                    		echo "Internal Assessment <i>(Max Marks : 10)</i>";
+                    		$max = "10";
+                    		break;
+                    	case 'midsem':
+                    		echo "Mid-Semester <i>(Max Marks : 30)</i>";
+                    		$max = "30";
+                    		break;
+                    	case 'endsem':
+                    		echo "End-Semester <i>(Max Marks : 50)</i>";
+                    		$max = "50";
+                    		break;
+                    } ?>
+                    
+                    
+                    </th>
                  </tr>
             </tfoot>
         </table>
@@ -240,7 +264,31 @@ if(Input::exists('get') || !Input::exists() || privilege()==NULL){
             	<tr>
                 	<th>#</th>
                     <th>Scholar No.</th>
-                    <th><?php echo strtoupper(Input::get('examtype')); ?></th>
+		    <th><?php switch(Input::get('examtype')){
+                    	case 'ct1':
+                    		echo "Class Test-1 <i>(Max Marks : 10)</i>";
+                    		$max = "10";
+                    		break;
+                    	case 'ct2':
+                    		echo "Class Test-2 <i>(Max Marks : 10)</i>";
+                    		$max = "10";
+                    		break;
+                    	case 'ct3':
+                    		echo "Internal Assessment <i>(Max Marks : 10)</i>";
+                    		$max = "10";
+                    		break;
+                    	case 'midsem':
+                    		echo "Mid-Semester <i>(Max Marks : 30)</i>";
+                    		$max = "30";
+                    		break;
+                    	case 'endsem':
+                    		echo "End-Semester <i>(Max Marks : 50)</i>";
+                    		$max = "50";
+                    		break;
+                    } ?>
+                    
+                    
+                    </th>
                  </tr>
             </tfoot>
         </table>

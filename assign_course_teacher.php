@@ -39,7 +39,7 @@ if(!loggedIn()){
 														$courses = $cc->getAllCourses();
 														while($course = $courses->fetch_object()){
 													?>
-														<option value="<?php echo $course->course_id; ?>" ><?php echo $course->course_name; ?></option>
+														<option value="<?php echo $course->course_id; ?>" ><?php echo $course->course_id.'-'.$course->course_name; ?></option>
 													<?php
 														}
 													?>
