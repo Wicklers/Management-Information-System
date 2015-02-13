@@ -11,3 +11,5 @@ students/students_cv/*
 images/profile/*
 students/images/profile/*
 .buildpath
+students/includes/errors/*.php~
+includes/errors/*.php~

@@ -20,11 +20,21 @@ if (Input::exists()) {
                             $teacher = new Teacher();
                             $v = $teacher -> validateLogin(Input::get('a'));
                             if ($v == 1) {
-                                $otp = new OTP();
-                                if ($otp->send($teacher->getMobile())) {//$otp->send($teacher->getMobile()) //Send OTP
-                                    Session::put('OTP Sending', 'OTP Sent, Verify Here');
+				$cookiename = 'misnootp'.$teacher->getMobile();
+				if(Cookie::get($cookiename)){
+					Session::put('loggedIn', 1);
+				        $log = new Log();
+				        $log -> loginLog('success');
+					Redirect::to('home.php');
+	         		}else{
+		                        $otp = new OTP();
+		                        if ($otp->send($teacher->getMobile())) {//$otp->send($teacher->getMobile()) //Send OTP
+		                            Session::put('OTP Sending', 'OTP Sent, Verify Here');
 
-                                }
+		                        }
+				}
+			    
+     				unset($cookiename);
                             } else if ($v == 0) {
                                 //Teacher is logging in for the first time, He/she was not added before by another teacher.
                                 //Show him his form to fill up his details
@@ -49,10 +59,19 @@ if (Input::exists()) {
                 } else {
                     $admin = new Admin();
                     if ($admin -> loginAdmin(Input::get('a'), Input::get('b'))) {
-                        $otp = new OTP();
-                        if ($otp->send($admin->getMobile())) {//$otp->send($admin->getMobile()) //Send OTP
-                            Session::put('OTP Sending', 'OTP Sent, Verify Here');
-                        }
+			$cookiename = 'misnootp'.$admin->getMobile();
+			if(Cookie::get($cookiename)){
+				Session::put('loggedIn', 1);
+		                $log = new Log();
+		                $log -> loginLog('success');
+				Redirect::to('home.php');
+			}else{
+		                $otp = new OTP();
+		                if ($otp->send($admin->getMobile())) {//$otp->send($admin->getMobile()) //Send OTP
+		                    Session::put('OTP Sending', 'OTP Sent, Verify Here');
+		                }
+			}
+			unset($cookiename);
                     } else {
                         // Not Valid Login!!!
                         $validate -> addError('Wrong Username or Password');
@@ -74,6 +93,11 @@ if (Input::exists()) {
                 Session::put('loggedIn', 1);
                 $log = new Log();
                 $log -> loginLog('success');
+		if(Input::get('nootp')==1){
+			 $cookiename = 'misnootp'.Session::get('mobile');
+			 Cookie::put($cookiename,true,7);
+			unset($cookiename);
+		}
                 Redirect::to('home.php');
             } else {
                 $log = new Log();
@@ -251,6 +275,10 @@ E-mail: harsh.ladha@gmail.com , anujsingh432@gmail.com , ripon.patgiri@gmail.com
 						<span rel="tooltip" data-original-title="One Time Password" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                         <input autofocus rel="tooltip" data-original-title="Enter OTP which is sent to your mobile phone" type="text" class="form-control text-center text" name="OTP" placeholder="OTP(One Time Password)" class="rect" maxlength="8" autocomplete="off" />
                     </div>
+		
+		    <div class="form-group input-group">
+			<input type="checkbox" name="nootp" value="1">Don't ask for OTP again on this computer
+		    </div>
                     <div class="form-group">
                     	<input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
                         <input type="submit" class="btn btn-default submit" value="Verify" name="otpsubmit"><br/><br/>
