@@ -86,7 +86,7 @@ if(!loggedIn() || privilege()==NULL){
 			                                    </div><!-- /.box-body -->
 			
 			                                    <div class="box-footer">
-			                                        <button type="submit" class="btn btn-primary" name='submit'>Go!!</button>
+			                                        <button type="submit" class="btn btn-primary" name='submit'>Show Marks Sheet Form</button>
 			                                    </div>
 			                                </form>
 			                            </div>
