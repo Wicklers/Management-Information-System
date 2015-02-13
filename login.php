@@ -95,7 +95,7 @@ if (Input::exists()) {
                 $log -> loginLog('success');
 		if(Input::get('nootp')==1){
 			 $cookiename = 'misnootp'.Session::get('mobile');
-			 Cookie::put($cookiename,true,7);
+			 Cookie::put($cookiename,true,15);
 			unset($cookiename);
 		}
                 Redirect::to('home.php');
