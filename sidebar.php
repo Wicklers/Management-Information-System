@@ -74,7 +74,14 @@ if(!loggedIn() || privilege()==NULL){
                                 <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
+				<?php 
+                                        if(privilege()=='hod' || privilege()=='dean' || privilege()=='director' || privilege()=='admin'){
+
+                                ?>
                                 <li <?php echo (Session::get('side-nav-active-sub')==='assign_course'?'class=active':'') ?> ><a href="assign_course.php"><i class="fa fa-angle-double-right"></i> Assign a course to teacher</a></li>
+				<?php
+					}
+				?>
                                 <li <?php echo (Session::get('side-nav-active-sub')==='courses_appointed'?'class=active':'') ?>><a href="view_courses_appointed.php"><i class="fa fa-angle-double-right"></i> View all courses assigned</a></li>
                             </ul>
                         </li>

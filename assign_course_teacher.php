@@ -4,6 +4,10 @@ if(!loggedIn()){
 	die();
 	exit();
 }
+else if(loggedIn() && (privilege()==='teacher' || privilege()==='dppc' || privilege()==='dupc' || privilege()==NULL)){
+        Session::destroy();
+        Redirect::to('includes/errors/unauthorized.php');
+}
 ?>
 				<section class="content-header">
                     <h1>

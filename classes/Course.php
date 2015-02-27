@@ -212,7 +212,9 @@ class Course {
     }
 
     public function appointCourse($teacher_id = '', $course_code = '', $course_sem = '', $course_dep = '') {
-
+	if(loggedIn() && (privilege()==='teacher' || privilege()==='dppc' || privilege()==='dupc' || privilege()==NULL)){
+        	return 0;
+	}
         if (loggedIn()) {
             $this->_connect();
             $course_code = $this->_db->real_escape_string(escape($course_code));
