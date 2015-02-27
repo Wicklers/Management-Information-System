@@ -27,14 +27,20 @@ else{
                             </tr>
 							<tr>
                                 <th>Department</th>
-                                <td>
-									<?php 
-										$d = new Department();
-										$d->getInfo($t->getDep());
-										echo $d->getDepName();
-										unset($d);
-									?>
-								</td>
+						<td>
+						<select name="department">
+							<option value="" selected>Department</option>
+							<?php
+								$dep = new Department();
+								$departments = $dep->getAllDepartment();
+								while($department = $departments->fetch_object()){
+							?>
+							<option value="<?php echo $department->dept_id; ?>" <?php echo (($t->getDep()==$department->dept_id)?'selected':''); ?>><?php echo $department->name; ?></option>
+							<?php
+								}
+							?>
+						</select>
+					</td>
 							</tr>
 							<tr>
                                 <th>Sem</th>

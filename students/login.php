@@ -156,7 +156,7 @@ if (Input::exists()) {
                         $student = new Student();
                         if ($student -> block(Session::get('student_id'))) {
                             Session::destroy();
-                            Redirect::to('include/errors/blocked.php');
+                            Redirect::to('includes/errors/blocked.php');
                         }
                     }
                 }
@@ -284,8 +284,8 @@ E-mail: harsh.ladha@gmail.com , anujsingh432@gmail.com , ripon.patgiri@gmail.com
                 <h1 class="title"><strong>Student Information System</strong></h1>
                 <form role="form" method="post" action="login.php">
                     <div class="form-group input-group">
-            <span rel="tooltip" data-original-title="Institute Email. e.g., harshvl@student.nits.ac.in" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <input rel="tooltip" data-original-title="Institute Email. e.g., yogeshchauhan@student.nits.ac.in" type="text" class="form-control text-center text" id="" placeholder="Institute Email" value="<?php echo Input::get('a'); ?>" name="a">
+            <span rel="tooltip" data-original-title="Scholar Number : e.g., 12-1-5-001" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input rel="tooltip" data-original-title="Scholar Number : e.g, 12-1-5-001 " type="text" class="form-control text-center text" id="" placeholder="Scholar Number" value="<?php echo Input::get('a'); ?>" name="a">
                     </div>
                     <div class="form-group input-group">
             <span rel="tooltip" data-original-title="Password" class="input-group-addon"><i class="glyphicon glyphicon-barcode"></i></span>
@@ -315,7 +315,7 @@ E-mail: harsh.ladha@gmail.com , anujsingh432@gmail.com , ripon.patgiri@gmail.com
                         <input autofocus rel="tooltip" data-original-title="Enter OTP which is sent to your mobile phone" type="text" class="form-control text-center text" name="OTP" placeholder="OTP(One Time Password)" class="rect" maxlength="8" autocomplete="off" />
                     </div>
 		    <div class="form-group input-group">
-			<input type="checkbox" name="nootp" value="1" checked>Don't ask for OTP again on this computer
+			<input type="checkbox" name="nootp" value="1" id='nootp' checked ><label for='nootp'>Don't ask for OTP again on this computer</label>
 		    </div>
                     <div class="form-group">
                       <input type="hidden" name="token" value="<?php echo Token::generate(); ?>">
