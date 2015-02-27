@@ -28,7 +28,7 @@ class OTP{
 
 				$this->generateOTP();
 				$this->_mobile =$mobile ;
-				$this->_message = 'Your OTP for MIS/SIS login is '.$this->_CODE.'. NIT Silchar. Developed by Harsh Vardhan Ladha and Yogesh Chauhan.';
+				$this->_message = 'Your One Time Password for MIS/SIS login is '.$this->_CODE.'. NIT Silchar 2015.';
 
 				// API call to send sms
 				$sms = new SMS();

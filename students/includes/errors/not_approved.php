@@ -1,7 +1,7 @@
 <center>
 <div class="welcome">
 	<img src="http://sis.nits.ac.in/images/logo.png" height="102px">
-	<h1>Not Approved</h1>
+	<h1>Registration Completed!</h1>
 	<p>Your registration has been completed successfully!!</p>
 	<p>Please wait/ask any authority to approve your registration!</p>
 </div>
