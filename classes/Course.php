@@ -330,6 +330,9 @@ class Course {
         if(!loggedIn()){
             return 0;
         }
+        if(loggedIn() && (privilege()==='teacher' || privilege()==='dppc' || privilege()==='dupc' || privilege()==NULL)){
+                return 0;
+        }
         $this->_connect();
 	$id = $this->_db->real_escape_string($id);
         $course_code = $this->_db->real_escape_string($course_code);
@@ -354,7 +357,10 @@ class Course {
         if(!loggedIn()){
             return 'Temporary Problem.';
         }
-        
+                if(loggedIn() && (privilege()==='teacher' || privilege()==='dppc' || privilege()==='dupc' || privilege()==NULL)){
+                return 'Access Denied. No privilege.';
+        }
+
         $this->_connect();
 	$id = $this->_db->real_escape_string($id);
         $course_code = $this->_db->real_escape_string($course_code);

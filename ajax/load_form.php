@@ -305,11 +305,18 @@ if(Input::exists('get') || !Input::exists() || privilege()==NULL){
 		<!-- Page Script -->
 		<script type="text/javascript">
 			$(function() {
-                $("#example1").dataTable();
-                $("#example2").dataTable();
+                $("#example1").dataTable({
+		    "iDisplayLength": 10,
+		    "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+		    });
+                $("#example2").dataTable({
+		    "iDisplayLength": 10,
+		    "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+		    });
             });
 		</script>
 	<?php 
 			} 
 	
 	?>
+
