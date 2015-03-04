@@ -21,7 +21,8 @@ if (Input::exists()) {
                             $v = $teacher -> validateLogin(Input::get('a'));
                             if ($v == 1) {
 				$cookiename = 'misnootp'.$teacher->getMobile();
-				if(Cookie::get($cookiename)){
+				if(1)//Cookie::get($cookiename)
+					{
 					Session::put('loggedIn', 1);
 				        $log = new Log();
 				        $log -> loginLog('success');
