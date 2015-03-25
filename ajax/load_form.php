@@ -306,12 +306,12 @@ if(Input::exists('get') || !Input::exists() || privilege()==NULL){
 		<script type="text/javascript">
 			$(function() {
                 $("#example1").dataTable({
-		    "iDisplayLength": 10,
-		    "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+		    "iDisplayLength": 200,
+		    "aLengthMenu": [[-1], ["All"]]
 		    });
                 $("#example2").dataTable({
-		    "iDisplayLength": 10,
-		    "aLengthMenu": [[10, 25, 50, 100, -1], [10, 25, 50, 100, "All"]]
+		    "iDisplayLength": 200,
+		    "aLengthMenu": [[-1], ["All"]]
 		    });
             });
 		</script>
