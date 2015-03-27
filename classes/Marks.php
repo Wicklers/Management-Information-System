@@ -140,7 +140,10 @@ class Marks{
 			$cdep = $this->_db->real_escape_string(escape($cdep));
 			$sch_no = $this->_db->real_escape_string(escape($sch_no));
 			$type = $this->_db->real_escape_string(escape($type));
-			$marks = $this->_db->real_escape_string(escape($marks));
+			if($this->_db->real_escape_string(escape($marks))=='ab' || $this->_db->real_escape_string(escape($marks))=='AB' || $this->_db->real_escape_string(escape($marks))=='Ab' || $this->_db->real_escape_string(escape($marks))=='aB')
+				$marks=-200;
+			else
+				$marks = $this->_db->real_escape_string(escape($marks));
 			
 			$c = new Course();
 			if(!$c->appointError(Session::get('teacher_id'), $ccode, $cdep)){
