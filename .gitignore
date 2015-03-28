@@ -14,3 +14,7 @@ students/images/profile/*
 students/includes/errors/*.php~
 includes/errors/*.php~
 students/includes/*.php~
+(.*).php~
+(.*).css~
+(.*).html~
+(.*).js~
