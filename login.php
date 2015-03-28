@@ -262,6 +262,7 @@ E-mail: harsh.ladha@gmail.com , anujsingh432@gmail.com , ripon.patgiri@gmail.com
 						<a href="forget.php">Forget Password?</a>
                         <input type="submit" class="btn btn-default submit" value="Sign In" name="login">
                     </div>
+					If you are facing some problem <a href="http://goo.gl/forms/uvqFSLWnIJ" target="_blank"> click here.</a>
                 </form>
             </div>
             <?php

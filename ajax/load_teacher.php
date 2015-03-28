@@ -41,7 +41,7 @@ if(privilege()==NULL){
 											?>
                                             <tr id="<?php echo "teacher_row_id".$i; ?>">
                                                 <td><?php echo $teacher->name; ?></td>
-                                                <td><?php echo strtoupper($teacher->privilege); ?></td>
+                                                <td><?php echo strtoupper($teacher->privilege); if($teacher->privilege=='dean'){echo ' ACADEMICS';}?></td>
                                                 <td><?php 
 														$d = new Department();
 														$di = $d->getInfo($teacher->dept_id);
