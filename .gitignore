@@ -13,3 +13,4 @@ students/images/profile/*
 .buildpath
 students/includes/errors/*.php~
 includes/errors/*.php~
+students/includes/*.php~
