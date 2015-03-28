@@ -87,6 +87,7 @@ if(!loggedIn() || privilege()==NULL){
 			
 			                                    <div class="box-footer">
 			                                        <button type="submit" class="btn btn-primary" name='submit'>Show Marks Sheet Form</button>
+													(For absent students type <b>Ab</b> )
 			                                    </div>
 			                                </form>
 			                            </div>
