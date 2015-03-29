@@ -128,7 +128,7 @@ if(Input::exists('get') || !Input::exists() || privilege()==NULL){
 				<tr>
 					<th><?php echo $j+1; ?></th>
 					<th><input type="hidden" name="scholar_number<?php echo $j+1 ; ?>" value="<?php echo $students->scholar_no; ?>" /><?php echo $students->scholar_no; ?></th>
-					<td><input class="form-control" name="marks<?php echo $j+1 ; ?>" type="text" pattern="((ab)|(((AB)|(Ab))|(aB)))|(((([0-9]{1})|(<?php if($max==30){echo "30";}else if($max==50){echo "50";}else if($max==10){echo "10";} ?>([\.]0{1,2})?))|([0-<?php if($max==30){echo "2";}else if($max==50){echo "4";}else if($max==10){echo "0";} ?>]{1}[0-9]{1}([\.]0{1,2})?))|([0-9]{1}([\.]0{1,2})?))" value=<?php if($marks==-200){echo 'Ab';}else{echo $marks;} ?>  required /></td>		
+					<td><input class="form-control" name="marks<?php echo $j+1 ; ?>" type="text" pattern="((ab)|(((AB)|(Ab))|(aB)))|(((([0-9]{1})|(<?php if($max==30){echo "30";}else if($max==50){echo "50";}else if($max==10){echo "10";} ?>([\.]0{1,2})?))|([0-<?php if($max==30){echo "2";}else if($max==50){echo "4";}else if($max==10){echo "0";} ?>]{1}[0-9]{1}([\.][0-9]{1,2})?))|([0-9]{1}([\.][0-9]{1,2})?))" value=<?php if($marks==-200){echo 'Ab';}else{echo $marks;} ?>  required /></td>		
 				</tr>
 					<?php 
 							$j++;
