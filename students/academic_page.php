@@ -38,11 +38,11 @@ if(!loggedIn() || privilege()==NULL){
                                             <tr>
                                                 <th>Course Code</th>
                                                 <th>Course Name</th>
-                                                <th>Class Test 1**</th>
-                                                <th>Class Test 2**</th>
-                                                <th>Internal Assesment**</th>
-                                                <th>Mid-Sem**</th>
-                                                <th>End-Sem**</th>
+                                                <th>Class Test 1</th>
+                                                <th>Class Test 2</th>
+                                                <th>Internal Assesment</th>
+                                                <th>Mid-Sem</th>
+                                                <th>End-Sem</th>
                                                 <th>Grade</th>
                                             </tr>
                                         </thead>
@@ -62,7 +62,7 @@ if(!loggedIn() || privilege()==NULL){
                                         			unset($c);
                                         			$m = new Marks();
                                         			$marks = $m->getMarks(Session::get('sn'), $course, '*');
-                                        			if($marks=='' || $marks=='0.00'){
+                                        			if($marks==''){
                                         				$ct1 = '-';
                                         				$ct2 = '-';
                                         				$ia = '-';
@@ -85,11 +85,11 @@ if(!loggedIn() || privilege()==NULL){
                                         			}
                                         		?>
                                         	</td>
-                                        	<td><?php echo $ct1; ?></td>
-                                        	<td><?php echo $ct2; ?></td>
-                                        	<td><?php echo $ia; ?></td>
-                                        	<td><?php echo $ms; ?></td>
-                                        	<td><?php echo $es; ?></td>
+                                        	<td><?php echo ($ct1!=NULL)?$ct1:'-'; ?></td>
+                                        	<td><?php echo ($ct2!=NULL)?$ct2:'-'; ?></td>
+                                        	<td><?php echo ($ia!=NULL)?$ia:'-'; ?></td>
+                                        	<td><?php echo ($ms!=NULL)?$ms:'-'; ?></td>
+                                        	<td><?php echo ($es!=NULL)?$es:'-'; ?></td>
                                         	<td><?php echo $g; ?></td>
                                         	</tr>
                                         	<?php
@@ -116,11 +116,11 @@ if(!loggedIn() || privilege()==NULL){
                                             <tr>
                                                 <th>Course Code</th>
                                                 <th>Course Name</th>
-                                                <th>Class Test 1**</th>
-                                                <th>Class Test 2**</th>
-                                                <th>Internal Assesment**</th>
-                                                <th>Mid-Sem**</th>
-                                                <th>End-Sem**</th>
+                                                <th>Class Test 1</th>
+                                                <th>Class Test 2</th>
+                                                <th>Internal Assesment</th>
+                                                <th>Mid-Sem</th>
+                                                <th>End-Sem</th>
                                                 <th>Grade</th>
                                             </tr>
                                         </thead>
@@ -140,7 +140,7 @@ if(!loggedIn() || privilege()==NULL){
                                         			unset($c);
                                         			$m = new Marks();
                                         			$marks = $m->getMarksLoad(Session::get('sn'), $course, '*');
-                                        			if($marks=='' || $marks=='0.00'){
+                                        			if($marks==''){
                                         				$ct1 = '-';
                                         				$ct2 = '-';
                                         				$ia = '-';
@@ -161,11 +161,11 @@ if(!loggedIn() || privilege()==NULL){
                                         			}
                                         		?>
                                         	</td>
-                                        	<td><?php echo $ct1; ?></td>
-                                        	<td><?php echo $ct2; ?></td>
-                                        	<td><?php echo $ia; ?></td>
-                                        	<td><?php echo $ms; ?></td>
-                                        	<td><?php echo $es; ?></td>
+                                        	<td><?php echo ($ct1!=NULL)?$ct1:'-'; ?></td>
+                                        	<td><?php echo ($ct2!=NULL)?$ct2:'-'; ?></td>
+                                        	<td><?php echo ($ia!=NULL)?$ia:'-'; ?></td>
+                                        	<td><?php echo ($ms!=NULL)?$ms:'-'; ?></td>
+                                        	<td><?php echo ($es!=NULL)?$es:'-'; ?></td>
                                         	<td><?php echo $g; ?></td>
                                         	</tr>
                                         	<?php
@@ -199,8 +199,7 @@ if(!loggedIn() || privilege()==NULL){
 					</table>
 				</div> <!-- ./box-body -->
 				<div class="box-footer">
-					*SPI is of most recent semester result. <br/>
-					**0.0 doesn't means it has been awarded. It will change when respective teacher will update marks.<br/>Keep checking. 
+					*SPI is of most recent semester result. <br/> 
 				</div>
 			</div>
 		</div>
