@@ -22,7 +22,7 @@ if(!loggedIn() || privilege()==NULL){
                             </a>
                         </li>
                         <li <?php echo (Session::get('side-nav-active')==='academic'?'class=active':'') ?> >
-                            <a href="academia.php">
+                            <a href="academics.php">
                                 <i class="fa fa-files-o"></i> <span>Academics</span>
                             </a>
                         </li>
