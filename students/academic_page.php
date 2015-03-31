@@ -62,7 +62,7 @@ if(!loggedIn() || privilege()==NULL){
                                         			unset($c);
                                         			$m = new Marks();
                                         			$marks = $m->getMarks(Session::get('sn'), $course, '*');
-                                        			if($marks==''){
+                                        			if($marks=='' || $marks=='0.00'){
                                         				$ct1 = '-';
                                         				$ct2 = '-';
                                         				$ia = '-';
@@ -140,7 +140,7 @@ if(!loggedIn() || privilege()==NULL){
                                         			unset($c);
                                         			$m = new Marks();
                                         			$marks = $m->getMarksLoad(Session::get('sn'), $course, '*');
-                                        			if($marks==''){
+                                        			if($marks=='' || $marks=='0.00'){
                                         				$ct1 = '-';
                                         				$ct2 = '-';
                                         				$ia = '-';
