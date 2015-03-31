@@ -176,7 +176,7 @@ if(Input::exists('get') || !Input::exists() || privilege()==NULL){
 			$c_dep = $input[1];
 			$c_code = $input[0];
 			$stud = new Student();
-			$studs = $stud->CourseDepStudentsLoad($c_dep, $c_code);
+			$studs = $stud->CourseDepStudentsLoad($c_code);
 			if($studs==''){
 				?>
 							<div class="box box-primary">
