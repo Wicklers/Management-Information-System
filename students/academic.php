@@ -6,13 +6,13 @@ if(!loggedIn() || privilege()==NULL){
 	
 	include 'header.php';
 
-	Session::put('side-nav-active', 'academia');
+	Session::put('side-nav-active', 'academic');
 	Session::put('side-nav-active-sub','');
 	include 'sidebar.php';
 	Session::delete('side-nav-active');
 	Session::delete('side-nav-active-sub');
 	
-	include 'academia_page.php';
+	include 'academic_page.php';
 
 	include 'footer.php';
 ?>
