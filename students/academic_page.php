@@ -11,7 +11,7 @@ if(!loggedIn() || privilege()==NULL){
 ?>
 <section class="content-header">
                     <h1>
-                        Academia
+                        Academics
                         <small>Your Academic Details </small>
                         <b><small> > Current Semester : <?php echo $s->getSemester(); ?></small></b>
                     </h1>
