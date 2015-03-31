@@ -21,9 +21,9 @@ if(!loggedIn() || privilege()==NULL){
                                 <i class="fa fa-home"></i> <span>Home</span>
                             </a>
                         </li>
-                        <li <?php echo (Session::get('side-nav-active')==='academia'?'class=active':'') ?> >
+                        <li <?php echo (Session::get('side-nav-active')==='academic'?'class=active':'') ?> >
                             <a href="academia.php">
-                                <i class="fa fa-files-o"></i> <span>Academia</span>
+                                <i class="fa fa-files-o"></i> <span>Academics</span>
                             </a>
                         </li>
                         <li <?php echo (Session::get('side-nav-active')==='profile'?'class=active':'') ?> >
