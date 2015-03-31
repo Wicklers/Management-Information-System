@@ -257,7 +257,7 @@ class Student {
             return '';
         }
     }
-    public function CourseDepStudentsLoad($department,$course_code){
+    public function CourseDepStudentsLoad($course_code){
     
     	if(!loggedIn()){
     		return 0;
@@ -265,7 +265,7 @@ class Student {
     	$this->_connect();
     	$course_code = $this->_db->real_escape_string($course_code);
     	$department = $this->_db->real_escape_string($department);
-    	$query = "SELECT scholar_no FROM students_info WHERE courses_load LIKE '%".$course_code."%' AND department='".$department."' AND approved='1' AND timestamp>='".Session::get('semester_timestamp')."' ORDER BY scholar_no";
+    	$query = "SELECT scholar_no FROM students_info WHERE courses_load LIKE '%".$course_code."%' AND approved='1' AND timestamp>='".Session::get('semester_timestamp')."' ORDER BY scholar_no";
     	$result = $this->_db->query($query);
     
     	if($result->num_rows){
