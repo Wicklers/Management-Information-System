@@ -190,11 +190,11 @@ if(!loggedIn() || privilege()==NULL){
 					<table class="table">
 						<tr>
 							<th>CPI</th>
-							<td><?php echo $s->getCPI();?></td>
+							<td><?php echo round($s->getCPI(),2);?></td>
 						</tr>
 						<tr>
 							<th>SPI*</th>
-							<td><?php echo $s->getSPI(); ?></td>
+							<td><?php echo round($s->getSPI(),2); ?></td>
 						</tr>
 					</table>
 				</div> <!-- ./box-body -->
