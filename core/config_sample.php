@@ -64,7 +64,7 @@ define("SMS_SENDER_ID", "NITSMS");
 
 
 
-header("Cache-Control: no-cache");
+header("Cache-Control:no-store, no-cache, must-revalidate");
 header("Pragma: no-cache");
 
 //ini_set('display_errors', 1);
