@@ -85,11 +85,11 @@ if(!loggedIn() || privilege()==NULL){
                                         			}
                                         		?>
                                         	</td>
-                                        	<td><?php echo ($ct1!=NULL)?$ct1:'-'; ?></td>
-                                        	<td><?php echo ($ct2!=NULL)?$ct2:'-'; ?></td>
-                                        	<td><?php echo ($ia!=NULL)?$ia:'-'; ?></td>
-                                        	<td><?php echo ($ms!=NULL)?$ms:'-'; ?></td>
-                                        	<td><?php echo ($es!=NULL)?$es:'-'; ?></td>
+                                        	<td><?php echo ($ct1!=NULL)?($ct1==-200?'AB':$ct1):'-'; ?></td>
+                                        	<td><?php echo ($ct2!=NULL)?($ct2==-200?'AB':$ct2):'-'; ?></td>
+                                        	<td><?php echo ($ia!=NULL)?($ia==-200?'AB':$ia):'-'; ?></td>
+                                        	<td><?php echo ($ms!=NULL)?($ms==-200?'AB':$ms):'-'; ?></td>
+                                        	<td><?php echo ($es!=NULL)?($es==-200?'AB':$es):'-'; ?></td>
                                         	<td><?php echo $g; ?></td>
                                         	</tr>
                                         	<?php
@@ -161,11 +161,11 @@ if(!loggedIn() || privilege()==NULL){
                                         			}
                                         		?>
                                         	</td>
-                                        	<td><?php echo ($ct1!=NULL)?$ct1:'-'; ?></td>
-                                        	<td><?php echo ($ct2!=NULL)?$ct2:'-'; ?></td>
-                                        	<td><?php echo ($ia!=NULL)?$ia:'-'; ?></td>
-                                        	<td><?php echo ($ms!=NULL)?$ms:'-'; ?></td>
-                                        	<td><?php echo ($es!=NULL)?$es:'-'; ?></td>
+                                        	<td><?php echo ($ct1!=NULL)?($ct1==-200?'AB':$ct1):'-'; ?></td>
+                                        	<td><?php echo ($ct2!=NULL)?($ct2==-200?'AB':$ct2):'-'; ?></td>
+                                        	<td><?php echo ($ia!=NULL)?($ia==-200?'AB':$ia):'-'; ?></td>
+                                        	<td><?php echo ($ms!=NULL)?($ms==-200?'AB':$ms):'-'; ?></td>
+                                        	<td><?php echo ($es!=NULL)?($es==-200?'AB':$es):'-'; ?></td>
                                         	<td><?php echo $g; ?></td>
                                         	</tr>
                                         	<?php
