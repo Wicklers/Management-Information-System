@@ -38,6 +38,9 @@ if(!loggedIn() || privilege()==NULL){
 			                                <form role="form" id="marks_enter">
 			                                    <div class="box-body">
 			                                        <div class="form-group">
+													<p>
+													Note: Internal assessment, Class Tests, Mid-sem, End-sem is equally applicable to practicals, seminars etc. but do set grading scale accordingly.
+													</p>
 			                                            <label for="course">Select course with respective department</label>
 			                                            <select class="form-control" id="course" name="course_id" onchange="changeload(this.value);">
 			                                            	<option value="" >Select your Course</option>
