@@ -33,7 +33,7 @@ if(!loggedIn()){
 			<tr>	
 				<th>AA</th>
 				<td class="_a"><input class="form-control" name="from_aa"  onkeyup="changefrom('a',this.value);"  type="text" value="<?php echo isset($grade_set[1])?$grade_set[1]:'' ; ?>" min=0 max=100 required pattern="[0-9]{1,3}" title='Must contain digits only' /></td>
-				<td class=" b"><input class="form-control" name="to_aa" id="2"  disabled type="text" value="100" min=0 max=100 required pattern="[0-9]{1,3}" /></td>	
+				<td class=" b"><input class="form-control" name="to_aa" id="2"   type="text" min=0 max=100 required pattern="[0-9]{1,3}" /></td>	
 			</tr>
 			<tr>	
 				<th>AB</th>
