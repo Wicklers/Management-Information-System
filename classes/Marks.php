@@ -463,7 +463,12 @@ class Marks{
 	}
 	
 	public function calculatePointer($sch_no='',$ccode='',$cdep='', $type='regular'){
-		$marks2 = $this->getMarks($sch_no,$ccode, '*');
+		if($type=='regular'){
+			$marks2 = $this->getMarks($sch_no,$ccode, '*');	
+		}else if($type=='load'){
+			$marks2 = $this->getMarksLoad($sch_no,$ccode, '*');
+		}
+		
 			$m = $marks2->fetch_object();
 			$sessional = $m->sessional;
 			$midsem = $m->midsem;
