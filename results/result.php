@@ -243,9 +243,9 @@ $mar_load = $m->getMarksofAllLoad($var[1],$var[0],'*');
 								<td><?php echo $i++; ?></td>
 								<td><?php echo $row->sch_no; ?></td>
 								<td><?php echo $row->sessional; ?></td>
-								<td><?php echo $row->midsem; ?></td>
-								<td><?php echo $row->endsem; ?></td>
-								<td><?php echo ($row->sessional+$row->midsem+$row->endsem); ?></td>
+								<td><?php echo ($row->midsem==-200?'AB':$row->midsem); ?></td>
+								<td><?php echo ($row->endsem==-200?'AB':$row->endsem); ?></td>
+								<td><?php echo ($row->sessional+($row->midsem==-200?0:$row->midsem)+($row->endsem==-200?0:$row->endsem)); ?></td>
 								<td><?php echo $m->getGradeFromPointer($row->pointer); ?></td>
 							</tr>
 							<?php
@@ -302,9 +302,9 @@ $mar_load = $m->getMarksofAllLoad($var[1],$var[0],'*');
 								<td><?php echo $i++; ?></td>
 								<td><?php echo $row->sch_no; ?></td>
 								<td><?php echo $row->sessional; ?></td>
-								<td><?php echo $row->midsem; ?></td>
-								<td><?php echo $row->endsem; ?></td>
-								<td><?php echo ($row->sessional+$row->midsem+$row->endsem); ?></td>
+								<td><?php echo ($row->midsem==-200?'AB':$row->midsem); ?></td>
+								<td><?php echo ($row->endsem==-200?'AB':$row->endsem); ?></td>
+								<td><?php echo ($row->sessional+($row->midsem==-200?0:$row->midsem)+($row->endsem==-200?0:$row->endsem)); ?></td>
 								<td><?php echo $m->getGradeFromPointer($row->pointer); ?></td>
 							</tr>
 							<?php
