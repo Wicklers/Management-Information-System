@@ -399,9 +399,9 @@ class Marks{
 		if($type=='regular'){
 			$marks2 = $this->getMarks($sch_no,$ccode, '*');
 			while($m = $marks2->fetch_object()){
-				$ct1 = $m->ct1;
-				$ct2 = $m->ct2;
-				$ia = $m->ct3;
+				$ct1 = ($m->ct1==-200?0:$m->ct1);
+				$ct2 = ($m->ct2==-200?0:$m->ct2);
+				$ia = ($m->ct3==-200?0:$m->ct3);
 			}
 			if($formula->num_rows){
 				$formula = $formula->fetch_object()->formula;
@@ -431,9 +431,9 @@ class Marks{
 		else if($type=='load'){
 			$marks2 = $this->getMarksLoad($sch_no,$ccode, '*');
 			while($m = $marks2->fetch_object()){
-				$ct1 = $m->ct1;
-				$ct2 = $m->ct2;
-				$ia = $m->ct3;
+				$ct1 = ($m->ct1==-200?0:$m->ct1);
+				$ct2 = ($m->ct2==-200?0:$m->ct2);
+				$ia = ($m->ct3==-200?0:$m->ct3);
 			}
 			if($formula->num_rows){
 				$formula = $formula->fetch_object()->formula;
@@ -471,8 +471,8 @@ class Marks{
 		
 			$m = $marks2->fetch_object();
 			$sessional = $m->sessional;
-			$midsem = $m->midsem;
-			$endsem = $m->endsem;
+			$midsem = ($m->midsem==-200?0:$m->midsem);
+			$endsem = ($m->endsem==-200?0:$m->endsem);
 		$total = ($sessional+$midsem+$endsem);
 		$pointer = $this->getPointer($total,$ccode,$cdep);
 		$sch_no = $this->_db->real_escape_string(escape($sch_no));
