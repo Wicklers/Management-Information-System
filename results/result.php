@@ -18,7 +18,7 @@ $mar_load = $m->getMarksofAllLoad($var[1],$var[0],'*');
 				<div class="box-header">
 	            	<h3 class="box-title">Pie Representation</h3>
 	                <div class="box-tools pull-right">
-	                	<button class="btn btn-primary btn-sm collapsed" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	                	<button class="btn btn-primary btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
 	                </div>
 	        	</div>
 	        	<div class="box-body">
@@ -60,7 +60,7 @@ $mar_load = $m->getMarksofAllLoad($var[1],$var[0],'*');
 				<div class="box-header">
 					<h3 class="box-title">Grading Scale</h3>
 					<div class="box-tools pull-right">
-	                	<button class="btn btn-default btn-sm collapsed" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	                	<button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
 	                </div>
 				</div> <!-- /.box header -->
 				<div class="box-body table-responsive no-padding">
@@ -124,7 +124,7 @@ $mar_load = $m->getMarksofAllLoad($var[1],$var[0],'*');
 				<div class="box-header">
 					<h3 class="box-title">Sessional Formula</h3>
 					<div class="box-tools pull-right">
-	                	<button class="btn btn-default btn-sm collapsed" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	                	<button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
 	                </div>
 				</div> <!-- /.box header -->
 				<div class="box-body">
@@ -162,7 +162,7 @@ $mar_load = $m->getMarksofAllLoad($var[1],$var[0],'*');
 				<div class="box-header">
 					<h3 class="box-title">Approval Status</h3>
 					<div class="box-tools pull-right">
-	                	<button class="btn btn-default btn-sm collapsed" data-widget="collapse"><i class="fa fa-minus"></i></button>
+	                	<button class="btn btn-default btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
 	                </div>
 				</div> <!-- /.box header -->
 				<div class="box-body">
@@ -342,8 +342,16 @@ $mar_load = $m->getMarksofAllLoad($var[1],$var[0],'*');
 		<!--Page Script -->
 		<script type="text/javascript">
 			$(function() {
-                $("#example1").dataTable();
-                $("#example2").dataTable();
+                $(function() {
+                $("#example1").dataTable({
+		    "iDisplayLength": 200,
+		    "aLengthMenu": [[-1], ["All"]]
+		    });
+                $("#example2").dataTable({
+		    "iDisplayLength": 200,
+		    "aLengthMenu": [[-1], ["All"]]
+		    });
+            });
             });
             $(".collapsed").click();
 		</script>
