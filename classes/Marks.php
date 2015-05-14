@@ -304,13 +304,19 @@ class Marks{
 			if($type==="all"){
 			    while ($row = $result->fetch_array(MYSQL_NUM)) {
 			        $pointer = $row[7];
-                    $row[7]=$row[4]+$row[5]+$row[6];
+			$row[1] = ($row[1]==-200?'AB':$row[1]);
+			$row[2] = ($row[2]==-200?'AB':$row[2]);
+			$row[3] = ($row[3]==-200?'AB':$row[3]);
+			$row[5] = ($row[5]==-200?'AB':$row[5]);
+			$row[6] =($row[6]==-200?'AB':$row[6]);
+                    $row[7]=$row[4]+($row[5]=='AB'?0:$row[5])+($row[6]=='AB'?0:$row[6]);
                     $row[8]=$this->getGradeFromPointer($pointer);
                     fputcsv($fp, array_values($row));
                 }
 			}
             else{
                 while ($row = $result->fetch_array(MYSQL_NUM)) {
+			$row[1]=($row[1]==-200?'AB':$row[1]);
                     fputcsv($fp, array_values($row));
                 }
             }
